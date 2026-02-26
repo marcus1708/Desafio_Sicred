@@ -1,0 +1,63 @@
+# 🚀 Projeto de Automação de API - Desafio Sicred
+
+Este projeto foca na automação de testes de backend para a API [DummyJSON](https://dummyjson.com), utilizando as melhores práticas de engenharia de software e garantindo a qualidade através de relatórios detalhados.
+
+---
+
+## 📋 Informações Mínimas do Projeto
+
+* **Linguagem:** Java 21.
+* **Gerenciador de Dependências:** Maven.
+* **Framework de Testes:** JUnit 5 (Jupiter).
+* **Biblioteca de Automação:** Rest Assured.
+* **Relatórios:** Allure Report.
+* **Principais Dependências:** Jackson Databind (Manipulação de JSON) e AspectJ Weaver (Agente para Allure).
+
+---
+
+## 🎯 Plano de Teste e Estratégia
+
+### Estratégia de Testes
+A estratégia baseia-se na **Pirâmide de Testes**, focando na camada de serviço (API). Utilizamos testes funcionais e de contrato para garantir que a comunicação entre sistemas esteja íntegra.
+
+### Cenários de Teste
+1.  **Health Check:** Validar se a API está online (`GET /test`).
+2.  **Massa de Dados:** Validar a listagem de usuários disponíveis (`GET /users`).
+3.  **Autenticação:** Realizar Login com credenciais válidas e capturar o Bearer Token (`POST /auth/login`).
+4.  **Segurança e Autorização:** Validar o acesso à lista de produtos utilizando o token capturado (`GET /auth/products`).
+
+---
+
+## 🛠️ Instalação e Configuração do Allure
+
+Para visualizar os relatórios gráficos, siga estes passos:
+
+1.  **Configuração de Ambiente:** Certifique-se de que o Maven está configurado no seu PATH do Windows.
+2.  **Instalação do Allure:** O Allure é baixado automaticamente pelo plugin configurado no `pom.xml` durante a execução.
+3.  **Configuração do AspectJ:** O projeto utiliza o `aspectjweaver` como agente Java no plugin `maven-surefire` para interceptar as chamadas do Rest Assured e JUnit.
+
+---
+
+## 🚀 Como Executar e Visualizar
+
+Siga a ordem dos comandos no terminal dentro da pasta `api-test`:
+
+### 1. Executar os Testes
+Este comando limpa execuções anteriores e roda a suíte de testes atual:
+```bash
+mvn clean test
+
+### 1. Executar os Testes
+Este comando limpa execuções anteriores e roda a suíte de testes atual:
+```bash
+mvn clean test
+
+### 2. Gerar o Report
+Este comando processa os arquivos JSON gerados na pasta target/allure-results e abre o relatório no seu navegador:
+```bash
+mvn allure:report
+
+### 3. Visualizar o Relatório no Navegador
+Este comando abre o relatório no seu navegador
+```bash
+mvn allure:serve
