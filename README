@@ -47,11 +47,6 @@ Este comando limpa execuções anteriores e roda a suíte de testes atual:
 ```bash
 mvn clean test
 
-### 1. Executar os Testes
-Este comando limpa execuções anteriores e roda a suíte de testes atual:
-```bash
-mvn clean test
-
 ### 2. Gerar o Report
 Este comando processa os arquivos JSON gerados na pasta target/allure-results e abre o relatório no seu navegador:
 ```bash
